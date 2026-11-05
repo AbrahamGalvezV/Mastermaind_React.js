@@ -1,0 +1,72 @@
+.button {
+    padding: 16px 64px;
+
+    font-family: "Cinzel", serif;
+    font-weight: 700;
+    font-size: clamp(1rem, 2vw, 1.8rem);
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+
+    border: 1px solid var(--color-border);
+    border-radius: 50px;
+
+    transition: background-position 0.5s ease, background-color var(--transition),
+        color var(--transition), box-shadow var(--transition),
+        transform var(--transition);
+}
+
+.button:hover:not(:disabled) {
+    transform: translateY(-2px);
+}
+
+.button:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+/* Principal: degradado de cobre a dorado */
+.primary {
+    color: var(--color-background);
+
+    background: linear-gradient(
+        110deg,
+        #8B4E2D 0%,
+        #B8734F 25%,
+        #E6B85C 50%,
+        #F5D99A 75%,
+        #B8734F 100%
+    );
+    background-size: 200% 100%;
+    background-position: 0% 50%;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
+}
+
+.primary:hover:not(:disabled) {
+    background-position: 100% 50%;
+    box-shadow: 0 8px 28px rgba(230, 184, 92, 0.35);
+}
+
+/* Secundario: transparente con borde bronce, para acciones como "Volver" */
+.ghost {
+    padding: 12px 40px;
+    font-size: clamp(0.85rem, 1.5vw, 1.1rem);
+    color: var(--color-text-highlight);
+
+    background-color: rgba(26, 16, 12, 0.55);
+    backdrop-filter: blur(4px);
+}
+
+.ghost:hover:not(:disabled) {
+    color: var(--color-background);
+    background-color: var(--color-border);
+}
+
+@media screen and (max-width: 576px) {
+    .button {
+        padding: 14px 40px;
+        letter-spacing: 0.2em;
+    }
+
+    .ghost {
+        padding: 10px 28px;
+    }
+}

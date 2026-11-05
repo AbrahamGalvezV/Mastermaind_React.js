@@ -1,11 +1,17 @@
-import { Hero } from "./components/Hero/Hero";
+import { Route, Routes } from "react-router-dom";
+import { Home } from "./pages/Hero/Home";
+import { Level } from "./pages/Level/Level";
 
 
 function App () {
 
     return (
-        <>
-            <Hero />
+        <> 
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/level" element={<Level />} />
+                {/* <Route path="/game{id}" element={<Game />} /> */}
+            </Routes>
         </>
     );
 }

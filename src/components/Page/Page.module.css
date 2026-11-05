@@ -1,0 +1,36 @@
+.page {
+    position: relative;
+    isolation: isolate;
+    width: 100%;
+    max-width: 1440px;
+    min-height: 100vh;
+    margin-inline: auto;
+    padding: 200px 70px 60px;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-background);
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.page::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: var(--page-bg) no-repeat var(--page-bg-position, top center) / cover;
+    transition: background-position 0.6s ease;
+}
+
+@media screen and (max-width: 992px) {
+    .page {
+        padding: 140px 40px 60px;
+        border-radius: 0;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .page {
+        padding: 100px 20px 40px;
+    }
+}
