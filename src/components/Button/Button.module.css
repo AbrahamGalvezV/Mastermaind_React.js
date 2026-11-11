@@ -1,10 +1,10 @@
 .button {
-    padding: 16px 64px;
+    --button-tracking: 0.50em;
 
     font-family: "Cinzel", serif;
     font-weight: 700;
-    font-size: clamp(1rem, 2vw, 1.8rem);
-    letter-spacing: 0.25em;
+    letter-spacing: var(--button-tracking);
+    text-indent: var(--button-tracking);
     text-transform: uppercase;
 
     border: 1px solid var(--color-border);
@@ -23,7 +23,16 @@
     transform: translateY(0);
 }
 
-/* Principal: degradado de cobre a dorado */
+.md {
+    padding: 16px 64px;
+    font-size: clamp(1rem, 2vw, 1.8rem);
+}
+
+.sm {
+    padding: 12px 40px;
+    font-size: clamp(0.85rem, 1.5vw, 1.1rem);
+}
+
 .primary {
     color: var(--color-background);
 
@@ -45,12 +54,8 @@
     box-shadow: 0 8px 28px rgba(230, 184, 92, 0.35);
 }
 
-/* Secundario: transparente con borde bronce, para acciones como "Volver" */
 .ghost {
-    padding: 12px 40px;
-    font-size: clamp(0.85rem, 1.5vw, 1.1rem);
     color: var(--color-text-highlight);
-
     background-color: rgba(26, 16, 12, 0.55);
     backdrop-filter: blur(4px);
 }
@@ -62,11 +67,14 @@
 
 @media screen and (max-width: 576px) {
     .button {
-        padding: 14px 40px;
-        letter-spacing: 0.2em;
+        --button-tracking: 0.2em;
     }
 
-    .ghost {
+    .md {
+        padding: 14px 40px;
+    }
+
+    .sm {
         padding: 10px 28px;
     }
 }

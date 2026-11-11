@@ -41,7 +41,6 @@
 }
 
 @media screen and (max-width: 992px) {
-    /* Desplaza la imagen hacia la derecha sin llegar al borde (100%) */
     .home {
         --page-bg-position: 65% top;
     }

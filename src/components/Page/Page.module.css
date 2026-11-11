@@ -4,6 +4,7 @@
     width: 100%;
     max-width: 1440px;
     min-height: 100vh;
+    min-height: 100dvh;
     margin-inline: auto;
     padding: 200px 70px 60px;
     display: flex;
@@ -33,4 +34,33 @@
     .page {
         padding: 100px 20px 40px;
     }
+}
+
+.centered {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-block: 110px 60px;
+}
+
+@media screen and (max-width: 576px) {
+    .centered {
+        padding-block: 90px 40px;
+    }
+}
+
+.compact {
+    padding-block: 16px;
+}
+
+@media screen and (max-width: 576px) {
+    .compact {
+        padding-block: 10px;
+    }
+}
+
+.fit {
+    height: 100vh;
+    height: 100dvh;
+    min-height: 0;
 }
